@@ -39,6 +39,21 @@ The project utilizes a dataset located at `notebook/data.csv` within the reposit
 * **Vintage:** Number of days that customer has been associated with the company
 * **Response:** Whether the customer is interested in buying the insurance. 0: No. 1: Yes
 
+## Random Forest Classifier
+
+The core of this project is a machine learning model designed to predict whether a customer is likely to buy vehicle insurance. This is a classification problem. The model used is a `RandomForestClassifier`, with hyperparameters chosen after extensive tuning using `RandomizedSearchCV`. The optimized parameters are:
+
+* n_estimators: 200
+* min_samples_split: 7
+* min_samples_leaf: 6
+* max_depth: 10
+* criterion: "entropy"
+* random_state: 101
+
+The specific details of the model architecture, training parameters, and evaluation metrics are defined within the `src/entity/estimator.py` file. The model is trained as part of the MLOps pipeline, ensuring that it is continuously updated and optimized with new data.
+
+
+
 
 ## Installation and Setup
 
